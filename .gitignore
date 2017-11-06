@@ -1,1 +1,95 @@
-wp/
+
+# Created by https://www.toptal.com/developers/gitignore/api/react,wordpress
+# Edit at https://www.toptal.com/developers/gitignore?templates=react,wordpress
+
+### IDE - WebStorm ###
+
+# User-specific stuff
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# File-based project format
+*.iws
+
+# Generated files
+.idea/**/contentModel.xml
+
+# Sensitive or high-churn files
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+/frontend/node_modules
+/frontend/bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
+
+### WordPress ###
+# Core
+#
+# Note: if you want to stage/commit WP core files
+# you can delete this whole section/until Configuration.
+/app/web/wp/wp-admin/
+/app/web/wp/wp-content/index.php
+/app/web/wp/wp-content/languages
+/app/web/wp/wp-content/plugins/index.php
+/app/web/wp/wp-content/themes/index.php
+/app/web/wp/wp-includes/
+/app/web/wp/index.php
+/app/web/wp/license.txt
+/app/web/wp/readme.html
+/app/web/wp/wp-*.php
+/app/web/wp/xmlrpc.php
+
+# Configuration
+/app/web/wp-config.php
+
+# Example themes
+/app/web/wp/wp-content/themes/twenty*/
+
+# Example plugin
+/app/web/wp/wp-content/plugins/hello.php
+
+# Uploads
+/app/web/wp/wp-content/uploads/
+/app/web/app/uploads
+
+# Vendor
+/app/composer.lock
+/app/vendor
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# htaccess
+/.htaccess
+
+# All plugins
+# Note: If you wish to whitelist plugins,
+# uncomment the next line
+#/wp-content/plugins
+
+# All themes
+# Note: If you wish to whitelist themes,
+# uncomment the next line
+#/wp-content/themes
