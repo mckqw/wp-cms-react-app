@@ -8,7 +8,8 @@ export const EmptyListLabel = styled(Typography)`
 `
 
 EmptyListLabel.defaultProps = {
-    pt: 2
+    pt: 2,
+    mt: '8%'
 }
 
 export const Footer = styled.div`
