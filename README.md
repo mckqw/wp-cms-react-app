@@ -1,8 +1,5 @@
-> This project is no longer maintained as we developed [docker-mate](https://github.com/docker-mate/docker-mate) as a successor, which supports more PHP based systems other than WordPress, local SSL and is overall more extensible and improved. <br>
-> I'd highly suggest having a look at the [docker-mate repo](https://github.com/docker-mate/docker-mate) and the [docs](https://docker-mate.dev/).
-
 # Bedrock Docker
-Easy-to-use [Docker](https://www.docker.com/) setup for local development of [Bedrock](https://github.com/roots/bedrock) based [Wordpress](https://wordpress.org/) projects
+[Docker](https://www.docker.com/) setup for local development of [Bedrock](https://github.com/roots/bedrock) based [Wordpress](https://wordpress.org/) projects
 
 *please note that this is intended for local development - deploying it to production is probably a bad idea*
 
@@ -14,7 +11,6 @@ Easy-to-use [Docker](https://www.docker.com/) setup for local development of [Be
 - [MailHog](https://github.com/mailhog/MailHog): Catch all outgoing mail for easy mail debugging
 - [phpMyAdmin](https://github.com/phpmyadmin/phpmyadmin): Direct database access
 
-[![Screenshot showing Bedrock Docker in action](https://user-images.githubusercontent.com/9881672/33634343-21380236-da14-11e7-8322-8896341115c9.png "Screenshot")](https://user-images.githubusercontent.com/9881672/33634343-21380236-da14-11e7-8322-8896341115c9.png)
 ## Requirements
 
 ### macOS
@@ -28,11 +24,10 @@ Easy-to-use [Docker](https://www.docker.com/) setup for local development of [Be
 ## Usage
 
 ### First time setup
-1. `git clone https://github.com/schliflo/bedrock-docker.git your-project`
-1. `cd your-project`
-1. Adjust `PROJECT_NAME=bedrock` in the Makefile to your projects name (use [kebap-case](https://stackoverflow.com/questions/11273282/whats-the-name-for-hyphen-separated-case/12273101#12273101) as this is also used for your local development domain)
-1. Run `make up` and follow the instructions
-1. Your new project should start, and you should be greeted with the local URLs where you can access it
+1. `git clone https://github.com/mckqw/wp-react-docker-app.git your-project`
+2. `cd your-project/frontent`
+3. `npm install`
+4. `cd your-project` & `make composer update`
 
 ### Starting, stopping etc...
 Run `make up` to start everything
@@ -51,6 +46,12 @@ Bedrock Docker abstracts composer into a container. You can use `make composer` 
     
     # update wordpress & plugins:
     make composer update
+
+### Using NPM
+
+    # install a npm plugin:
+    make ssh frontend
+    npm i your-package-name
 
 
 ### Backup a database
