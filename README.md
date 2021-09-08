@@ -15,7 +15,14 @@
 
 ### macOS
 - If you're using [dinghy](https://github.com/codekitchen/dinghy) that's everything you need
-- For native docker installs you need to configure your system to resolve `.docker` domains to `127.0.0.1`
+- For native docker installs you need to configure your system to resolve `.docker` domains to `127.0.0.1` This can be done by:
+    - Make a new folder called `/etc/resolver/`
+    - Inside this folder create a new file named `docker` with the following contents:
+
+
+    nameserver 127.0.0.1
+    port 19322
+
 
 ### Linux
 - `docker` & `docker-compose`
@@ -25,11 +32,13 @@
 
 ### First time setup
 1. `git clone https://github.com/mckqw/wp-react-docker-app.git your-project`
-2. `cd your-project/frontent`
-3. `npm install`
-4. `cd your-project` & `make composer update`
+2. `cd your-project/frontent` & `npm install`
+3. `cd your-project` & `make composer update`
 
 ### Starting, stopping etc...
+
+_Ensure that you run this command in your project root where the makefile is located_
+
 Run `make up` to start everything
 
 Run `make stop` to stop everything
