@@ -1,11 +1,14 @@
 import {useRef, useState} from 'react';
 import {Avatar, Popover} from '@material-ui/core';
 import {AvatarMenuContainer, MenuContainer, MenuLink} from "./styles";
+import {logout} from "../actions/auth"
+import {useDispatch} from "react-redux";
 
 
 const AvatarWithMenuPopover = (popoverContent) => {
     const [anchorEl, setAnchorEl] = useState(null);
     const containerRef = useRef();
+    const dispatch = useDispatch()
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -13,6 +16,10 @@ const AvatarWithMenuPopover = (popoverContent) => {
 
     const handleClose = () => {
         setAnchorEl(null);
+    };
+
+    const handleLogout = () => {
+        dispatch(logout())
     };
 
     const open = Boolean(anchorEl);
@@ -40,8 +47,7 @@ const AvatarWithMenuPopover = (popoverContent) => {
                 container={containerRef.current}
             >
                 <MenuContainer>
-                    <MenuLink defaultColor={'secondary.base'} highlighColor={'secondary.base'}> Profile </MenuLink>
-                    <MenuLink> Logout </ MenuLink>
+                    <MenuLink onClick={handleLogout}> Logout </ MenuLink>
                 </MenuContainer>
             </Popover>
         </AvatarMenuContainer>
