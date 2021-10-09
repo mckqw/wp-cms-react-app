@@ -98,20 +98,10 @@ MainContent.defaultProps = {
     minHeight: '60vh'
 }
 
-const MainLogoSpin = keyframes`
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-`
 
 export const MainLogo = styled.img`
   height: 8vh;
-  @media (prefers-reduced-motion: no-preference) {
-      animation: ${MainLogoSpin} infinite 100s linear
-  }
+  padding: 1%;
 `;
 
 export const MainHeader = styled.header`

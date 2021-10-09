@@ -9,8 +9,8 @@ const TasksListItem = (props) => {
     return (
         <TasksListItemContainer key={props.index} selected={selected}>
             <Typography>{props.task.title && props.task.title.rendered}</Typography>
-            <Typography>{props.task.content && props.task.content.rendered}</Typography>
-            <Typography>{props.task.content && props.task.content.rendered}</Typography>
+            <Typography>{props.task.description && props.task.description}</Typography>
+            {/*<Typography>{props.task.content && props.task.content.rendered}</Typography>*/}
             <CloseButton onClick={() => {
                 setSelected(true);
                 props.callback(props.index);

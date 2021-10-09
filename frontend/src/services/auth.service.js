@@ -1,4 +1,3 @@
-
 import axios from "axios";
 
 const API_URL = "http://wp.tasks.docker/?rest_route=/simple-jwt-login/v1/";
@@ -14,6 +13,7 @@ class AuthService {
             })
             .then((response) => {
                 if (response.data.jwt && response.success) {
+                    console.log('login')
                     localStorage.setItem("jwt", JSON.stringify(response.data));
                 }
 
@@ -30,6 +30,7 @@ class AuthService {
             })
             .then((response) => {
                 if (response.data && response.success) {
+                    console.log('validate')
                     localStorage.setItem("user", JSON.stringify(response.data));
                 }
 

@@ -8,8 +8,10 @@ import {
     LOGOUT,
 } from "../actions/types";
 
-const user = JSON.parse(localStorage.getItem("user"));
-const jwt = JSON.parse(localStorage.getItem("jwt"));
+let user = JSON.parse(localStorage.getItem("user"));
+let jwt = JSON.parse(localStorage.getItem("jwt"));
+
+console.log(localStorage.tasks)
 
 const initialState = user
     ? { isLoggedIn: true, user , jwt}

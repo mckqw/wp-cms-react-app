@@ -30,22 +30,23 @@ const TaskList = () => {
     const [description, setDescription] = useState("");
 
     useEffect(() => {
-        async function loadPost() {
+        async function loadTasks() {
             new Promise((resolve, reject) => {
-                Utils.getPosts(TASKS_URL, [], resolve, reject)
+                Utils.getPosts(TASKS_URL, [], resolve, reject, '&categories=195')
             })
                 .then(response => {
-                    const filteredTasks = response.filter((element) => {
-                        return element.categories.includes(195);
-                    })
-                    setTasks(filteredTasks);
+                    // const filteredTasks = response.filter((element) => {
+                    //     return element.categories.includes(195);
+                    // })
+                    console.log(response)
+                    setTasks(response);
                     setLoadingTasks(false);
                 })
         }
 
         async function loadTags() {
             new Promise((resolve, reject) => {
-                Utils.getPosts(TAG_URL, [], resolve, reject)
+                Utils.getPosts(TAG_URL, [], resolve, reject,'')
             })
                 .then(response => {
                     const filteredTags = response.filter((element) => {
@@ -56,7 +57,7 @@ const TaskList = () => {
                 })
         }
 
-        loadPost()
+        loadTasks()
             .then(loadTags);
     }, []);
 
@@ -91,6 +92,10 @@ const TaskList = () => {
             />
     }
 
+    const handleSubmit = () => {
+
+    }
+
     const classes = useStyles();
     return (
         <TaskListContainer>
@@ -111,7 +116,9 @@ const TaskList = () => {
 
             <Footer>
                 <InputContainer>
-                    <form className={classes.form} noValidate>
+                    <form className={classes.form}
+                          noValidate
+                          onSubmit={handleSubmit} >
                         <TextField
                             variant="outlined"
                             margin="normal"

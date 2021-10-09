@@ -8,6 +8,8 @@ import {
     FormContainer,
     LoginPageContainer
 } from "./styles";
+import {MainLogo} from "../styles";
+import tasks_logo from "../../assets/tasks_logo.svg";
 
 const LoginPage = () => {
 
@@ -61,6 +63,9 @@ const LoginPage = () => {
         return (
             <LoginPageContainer>
                 <FormControl className={classes.FormContainer}>
+                    <MainLogo
+                        src={tasks_logo}
+                        alt="logo"/>
                     <Collapse in={collapsed} className={classes.CollapseWrapper}>
                         <FormControl className={classes.FormControl}>
                             <TextField
